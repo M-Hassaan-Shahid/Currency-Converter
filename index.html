@@ -5,30 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <div class="container">
       <h1>Currency Converter</h1>
       <form action="">
-        <p>Enter Amount</p>
+        <label for="amount">Enter Amount</label>
 
-        <input type="text" value="100" id="amount" name="amount" />
-      </form>
-    </div>
-    <div class="dropdown">
-        <div class="form">
-            <p>From</p>
+        <input
+          type="text"
+          value="100"
+          id="amount"
+          name="amount"
+          title="Enter the amount to convert"
+          placeholder="Enter amount"
+        />
+
+        <div class="dropdown">
+          <div class="from">
+            <label for="fromCurrency">From</label>
             <div class="select-container">
-                
-                <select id="fromCurrency" name="from">
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="GBP">GBP</option>
-                    <option value="INR">INR</option>
-                    <option value="JPY">JPY</option>
-                </select>
+              <img
+                src="https://flagsapi.com/IN/flat/64.png"
+                alt="Country Flag"
+                id="fromFlag"
+              />
+              <select id="fromCurrency" name="from">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+              </select>
             </div>
+            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          </div>
+          <div class="to">
+            <label for="toCurrency">To</label>
+            <div class="select-container">
+              <img
+                src="https://flagsapi.com/IN/flat/64.png"
+                alt="Country Flag"
+                id="toFlag"
+              />
+              <select id="toCurrency" name="to">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="GBP">GBP</option>
+                <option value="INR">INR</option>
+                <option value="JPY">JPY</option>
+              </select>
+            </div>
+          </div>
         </div>
+        <div class="msg">
+          <p>USD = 285RS</p>
+        </div>
+        <button>Get Exchange Rate</button>
+      </form>
     </div>
   </body>
 </html>
