@@ -16,8 +16,8 @@
   <body>
     <div class="container">
       <h1>Currency Converter</h1>
-      <form action="">
-        <label for="amount">Enter Amount</label>
+      <form>
+        <label for="amount" class="amt">Enter Amount</label>
 
         <input
           type="text"
@@ -37,16 +37,10 @@
                 alt="Country Flag"
                 id="fromFlag"
               />
-              <select id="fromCurrency" name="from">
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="INR">INR</option>
-                <option value="JPY">JPY</option>
-              </select>
+              <select id="fromCurrency" name="select"></select>
             </div>
-            <i class="fa-solid fa-arrow-right-arrow-left"></i>
           </div>
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
           <div class="to">
             <label for="toCurrency">To</label>
             <div class="select-container">
@@ -55,21 +49,17 @@
                 alt="Country Flag"
                 id="toFlag"
               />
-              <select id="toCurrency" name="to">
-                <option value="USD">USD</option>
-                <option value="EUR">EUR</option>
-                <option value="GBP">GBP</option>
-                <option value="INR">INR</option>
-                <option value="JPY">JPY</option>
-              </select>
+              <select id="toCurrency" name="select"></select>
             </div>
           </div>
         </div>
         <div class="msg">
           <p>USD = 285RS</p>
         </div>
-        <button>Get Exchange Rate</button>
+        <button id="btn">Get Exchange Rate</button>
       </form>
     </div>
+    <script src="script.js"></script>
+    <script src="code.js"></script>
   </body>
 </html>
