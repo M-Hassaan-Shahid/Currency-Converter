@@ -1,4 +1,4 @@
-const BASE_URL = 'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies';
+const API_KEY = '7093f7dc6628eb1b00bd7b2f';
 const dropdowns = document.querySelectorAll('.dropdown select');
 const button = document.getElementById('btn');
 
@@ -37,9 +37,24 @@ btn.addEventListener("click", async (evt) => {
         alert("Please enter a valid amount");
         return;
     }
-    const url = `${BASE_URL}/${fromCurrency.toLowerCase()}/${toCurrency.toLowerCase()}.json`;
-    let response = await fetch(url);
-    console.log(response);
+    const url = `https://v6.exchangerate-api.com/v6/${API_KEY}/latest/${fromCurrency}`;
 
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.result !== "success") {
+            throw new Error("API error");
+        }
+
+        const rate = data.conversion_rates[toCurrency];
+        const convertedAmount = (amtValue * rate).toFixed(2);
+
+        document.querySelector(".msg p").innerText =
+            `${amtValue} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+    } catch (error) {
+        console.error("Conversion error:", error);
+        alert("Failed to get exchange rate. Try again.");
+    }
 
 });
