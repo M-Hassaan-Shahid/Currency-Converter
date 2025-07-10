@@ -64,7 +64,7 @@ img {
   font-size: 1.15rem;
 }
 
-/* 🔻 Responsive Styles for Mobiles */
+/* Responsive Styles for Mobiles */
 @media (max-width: 500px) {
   .dropdown {
     flex-direction: column;
